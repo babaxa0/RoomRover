@@ -1,11 +1,11 @@
-﻿<Window x:Class="RoomRover.Reserve"
+﻿<Window x:Class="RoomRover.PayRoom"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoomRover"
         mc:Ignorable="d"
-        Title="Reserve" Height="500" Width="800" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="PayRoom" Height="500" Width="800" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <Style x:Key="TB" TargetType="TextBox">
@@ -188,109 +188,17 @@
     </Window.Resources>
 
     <Grid>
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="730" Height="430" Background="#00CFEB">
 
+            <TextBlock x:Name="Name_room" Text="Name_room" FontSize="32" Margin="50 50 0 0"/>
+
+        </Grid>
+
+
+        <Grid Width="35" Height="500" VerticalAlignment="Center" HorizontalAlignment="Right" Background="#291C11"/>
+        <Grid Width="35" Height="500" VerticalAlignment="Center" HorizontalAlignment="Left" Background="#291C11"/>
+        <Grid Width="800" Height="35" VerticalAlignment="Bottom" HorizontalAlignment="Center" Background="#291C11"/>
         <Grid Width="800" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center" Background="#291C11"/>
-
-        <Grid Height="465" Width="35" VerticalAlignment="Bottom" HorizontalAlignment="Left">
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#291C11" Offset="0"/>
-                    <GradientStop Color="#3B2818" Offset="1"/>
-                </LinearGradientBrush>
-            </Grid.Background>
-
-        </Grid>
-
-        <Grid Height="465" Width="765" VerticalAlignment="Bottom" Background="White" HorizontalAlignment="Right">
-
-            <ScrollViewer>
-                <StackPanel>
-
-                    <Border HorizontalAlignment="Left" Margin="5" Background="#00A7BD" Width="745" Height="150" BorderThickness="0">
-
-                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
-                           
-                            <TextBlock Width="280" Text="Комфорт" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="24" Padding="10 15 0 0" FontWeight="Bold"/>
-                            <TextBlock Width="280" Text="Стоимость номера от 7 900 руб./сутки" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="14" Padding="10 70 0 0"/>
-                            <Image Source="/Source/room1.jpg" Height="150" Margin="290 0 0 0"/>
-
-                            <Button Style="{StaticResource btn1}" VerticalAlignment="Bottom" BorderThickness="0" Background="#00346B" Content="Забронировать" Foreground="White" FontSize="16" FontWeight="bold" Padding="0 0 0 2" HorizontalAlignment="Left" Width="175" Height="30" Margin="10 0 0 10" Click="Button_Click"/>
-
-                        </Grid>
-
-                        <Border.Effect>
-                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
-                        </Border.Effect>
-                    </Border>
-
-                    <Border HorizontalAlignment="Left" Margin="5" Background="#00A7BD" Width="745" Height="150" BorderThickness="0">
-
-                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
-                            
-                            <TextBlock Width="280" Text="Улучшенный номер" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="24" Padding="10 15 0 0" FontWeight="Bold"/>
-                            <TextBlock Width="280" Text="Стоимость номера от 7 900 руб./сутки" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="14" Padding="10 70 0 0"/>
-                            <Image Source="/Source/room2.jpg" Margin="290 0 0 0"/>
-
-                            <Button Style="{StaticResource btn1}" VerticalAlignment="Bottom" BorderThickness="0" Background="#00346B" Content="Забронировать" Foreground="White" FontSize="16" FontWeight="bold" Padding="0 0 0 2" HorizontalAlignment="Left" Width="175" Height="30" Margin="10 0 0 10" Click="Button_Click"/>
-                        </Grid>
-
-                        <Border.Effect>
-                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
-                        </Border.Effect>
-                    </Border>
-
-                    <Border HorizontalAlignment="Left" Margin="5" Background="#00A7BD" Width="745" Height="150" BorderThickness="0">
-
-                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
-                            
-                            <TextBlock Width="280" Text="Люкс" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="24" Padding="10 15 0 0" FontWeight="Bold"/>
-                            <TextBlock Width="280" Text="Стоимость номера от 20 600 руб./сутки" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="14" Padding="10 70 0 0"/>
-                            <Image Source="/Source/room3.jpg" Margin="290 0 0 0"/>
-
-                            <Button Style="{StaticResource btn1}" VerticalAlignment="Bottom" BorderThickness="0" Background="#00346B" Content="Забронировать" Foreground="White" FontSize="16" FontWeight="bold" Padding="0 0 0 2" HorizontalAlignment="Left" Width="175" Height="30" Margin="10 0 0 10" Click="Button_Click"/>
-                        </Grid>
-                        
-                        <Border.Effect>
-                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
-                        </Border.Effect>
-                    </Border>
-
-                    <Border HorizontalAlignment="Left" Margin="5" Background="#00A7BD" Width="745" Height="150" BorderThickness="0">
-
-                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
-                            
-                            <TextBlock Width="280" Text="Апартаменты «Миллениум»" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="18" Padding="10 15 0 0" FontWeight="Bold"/>
-                            <TextBlock Width="280" Text="Стоимость номера от 26 900 руб./сутки" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="14" Padding="10 70 0 0"/>
-                            <Image Source="/Source/room4.jpg" Margin="290 0 0 0"/>
-
-                            <Button Style="{StaticResource btn1}" VerticalAlignment="Bottom" BorderThickness="0" Background="#00346B" Content="Забронировать" Foreground="White" FontSize="16" FontWeight="bold" Padding="0 0 0 2" HorizontalAlignment="Left" Width="175" Height="30" Margin="10 0 0 10" Click="Button_Click"/>
-                        </Grid>
-                        
-                        <Border.Effect>
-                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
-                        </Border.Effect>
-                    </Border>
-
-                    <Border HorizontalAlignment="Left" Margin="5" Background="#00A7BD" Width="745" Height="150" BorderThickness="0">
-
-                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
-                            
-                            <TextBlock Width="280" Text="Президентские апартаменты" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="18" Padding="10 15 0 0" FontWeight="Bold"/>
-                            <TextBlock Width="280" Text="Стоимость номера от 31 400 руб./сутки" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="14" Padding="10 70 0 0"/>
-                            <Image Source="/Source/room5.jpg" Margin="290 0 0 0"/>
-
-                            <Button Style="{StaticResource btn1}" VerticalAlignment="Bottom" BorderThickness="0" Background="#00346B" Content="Забронировать" Foreground="White" FontSize="16" FontWeight="bold" Padding="0 0 0 2" HorizontalAlignment="Left" Width="175" Height="30" Margin="10 0 0 10" Click="Button_Click"/>
-                        </Grid>
-                        
-                        <Border.Effect>
-                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
-                        </Border.Effect>
-                    </Border>
-
-                </StackPanel>
-            </ScrollViewer>
-            
-        </Grid>
 
         <Grid Name="Toolbar" Width="800" Height="35" VerticalAlignment="Top" Grid.Row="0" Background="Transparent" MouseDown="Toolbar_MouseDown">
 
@@ -301,9 +209,7 @@
             <Button Style="{StaticResource btn3}"  BorderThickness="0" Background="#291C11" Height="35" Width="35" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 0 35 0" Click="Button_Click_2">
                 <Image Name="MinButt" Source="/Source/palkaneaktiv.png" Height="15" Width="15" Stretch="Fill" Margin="0,8,0,0"/>
             </Button>
-
-
-
+            
         </Grid>
 
     </Grid>

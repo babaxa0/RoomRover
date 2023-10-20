@@ -200,19 +200,19 @@
             </Grid.Background>
 
 
-            <Button Style="{StaticResource btn4}" Width="200" Height="115" VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="0" Background="#322214">
+            <Button Style="{StaticResource btn4}" Width="200" Height="115" VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="0" Background="#322214" Click="Button_Click_3">
                 <TextBlock Foreground="White" FontWeight="Bold" Width="200" Height="100" Text="Отзывы" TextWrapping="Wrap" FontSize="22" Padding="10 35 0 0"/>
             </Button>
 
-            <Button Style="{StaticResource btn4}" Width="200" Height="115" Margin="0 115 0 0" VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="0"  Background="#322214">
+            <Button Style="{StaticResource btn4}" Width="200" Height="115" Margin="0 115 0 0" VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="0"  Background="#322214" Click="Button_Click_4">
                 <TextBlock Foreground="White" FontWeight="Bold" Width="200" Height="100" Text="Бронирование номеров" TextWrapping="Wrap" FontSize="22" Padding="10 15 0 0"/>
             </Button>
 
-            <Button Style="{StaticResource btn4}" Width="200" Height="115" Margin="0 230 0 0" VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="0"  Background="#322214">
+            <Button Style="{StaticResource btn4}" Width="200" Height="115" Margin="0 230 0 0" VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="0"  Background="#322214" Click="Button_Click_5">
                 <TextBlock Foreground="White" FontWeight="Bold" Width="200" Height="100" Text="Спа-процедуры Фитнесс" TextWrapping="Wrap" FontSize="22" Padding="10 15 0 0"/>
             </Button>
 
-            <Button Style="{StaticResource btn4}" Width="200" Height="120" Margin="0 345 0 0" VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="0"  Background="#322214">
+            <Button Style="{StaticResource btn4}" Width="200" Height="120" Margin="0 345 0 0" VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="0"  Background="#322214" Click="Button_Click_6">
                 <TextBlock Foreground="White" FontWeight="Bold" Width="200" Height="100" Text="Ресторан          Бар" TextWrapping="Wrap" FontSize="22" Padding="10 18 0 0"/>
             </Button>
 

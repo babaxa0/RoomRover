@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace RoomRover
 {
     /// <summary>
-    /// Логика взаимодействия для HomePageGuest.xaml
+    /// Логика взаимодействия для PayRoom.xaml
     /// </summary>
-    public partial class HomePageGuest : Window
+    public partial class PayRoom : Window
     {
-        public HomePageGuest()
+        public PayRoom()
         {
             InitializeComponent();
         }
@@ -39,35 +39,6 @@ namespace RoomRover
             {
                 this.DragMove();
             }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            Reserve reserve = new Reserve();
-            reserve.Show();
-            this.Close();
-        }
-
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_6(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

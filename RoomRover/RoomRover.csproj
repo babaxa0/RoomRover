@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="PayRoom.xaml.cs">
+      <DependentUpon>PayRoom.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Reserve.xaml.cs">
       <DependentUpon>Reserve.xaml</DependentUpon>
     </Compile>
@@ -77,6 +80,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PayRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Reserve.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -122,6 +129,22 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Source\header.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\room1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\room2.jpg" />
+    <Resource Include="Source\room3.jpg" />
+    <Resource Include="Source\room4.jpg" />
+    <Resource Include="Source\room5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\arrow.png" />
+    <Resource Include="Source\dinner.png" />
+    <Resource Include="Source\gift.png" />
+    <Resource Include="Source\people.png" />
+    <Resource Include="Source\wallet.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
