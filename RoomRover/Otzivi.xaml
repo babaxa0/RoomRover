@@ -1,0 +1,423 @@
+﻿<Window x:Class="RoomRover.Otzivi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoomRover"
+        mc:Ignorable="d"
+        Title="Otzivi" Height="500" Width="800" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <Style x:Key="TB" TargetType="TextBox">
+            <Setter Property="Background" Value="#FF18222B"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderBrush" Value="#24180F"/>
+            <Setter Property="Padding" Value="7,10,0,0"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="FontFamily" Value="Britannic Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid x:Name="root" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" SnapsToDevicePixels="True" VerticalAlignment="{TemplateBinding VerticalAlignment}">
+                            <Border x:Name="Background" BorderThickness="1" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"/>
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                      BorderThickness="0"
+                                      Padding="{TemplateBinding Padding}"
+                                      IsTabStop="False"
+                                      Background="{x:Null}"
+                                      TextElement.Foreground="{TemplateBinding Foreground}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="Black"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="#0E1317"/>
+                                <Setter Property="BorderBrush" Value="Black"/>
+                                <Setter Property="Foreground" Value="#00C3DD"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="btn1" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="1" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" CornerRadius="13" BorderBrush="#24180F">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation To="180"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
+                                            <DoubleAnimation To="33"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
+                                            <ColorAnimation To="#00346B" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.2"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation To="175"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
+                                            <DoubleAnimation To="30"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
+                                            <ColorAnimation To="#00346B" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.2"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="btn2" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" BorderBrush="#24180F">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation To="#BC0000" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation To="#291C11" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="btn3" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" BorderBrush="#24180F">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation To="#1F150D" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation To="#291C11" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="btn4" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" BorderBrush="#24180F">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation To="#007787" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation To="#00A7BD" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid>
+
+        <Grid Height="465" Width="35" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#291C11" Offset="0"/>
+                    <GradientStop Color="#3B2818" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <Image Source="/Source/arrow_back.png" Width="25" Height="25" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 30 0 0"  MouseDown="Image_MouseDown"/>
+
+        </Grid>
+
+        <Grid Height="465" Width="35" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#291C11" Offset="0"/>
+                    <GradientStop Color="#3B2818" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Height="35" Width="800" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#291C11" Offset="0"/>
+                    <GradientStop Color="#3B2818" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Height="35" Width="800" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#3A2717" Offset="0"/>
+                    <GradientStop Color="#3B2818" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Height="430" Width="730">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#008394" Offset="0"/>
+                    <GradientStop Color="#00E1FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+
+            <ScrollViewer>
+                <StackPanel>
+
+                    <Border HorizontalAlignment="Left" Margin="5" Background="White" Width="700" Height="150" BorderThickness="3" BorderBrush="black">
+
+                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
+
+                            <Image Source="/Source/acc_logo.png" Height="40" Width="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 10 0 0"/>
+                            <TextBlock Text="Иван, 32 года." FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="60 15 0 0"/>
+                            <Image Source="/Source/message.png" Height="25" Width="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15 60 0 0"/>
+                            <TextBlock Text="Номер в отеле был очень комфортным и уютным. Все было чисто и аккуратно. Удобная кровать, просторная ванная комната и хороший вид из окна сделали пребывание очень приятным. Также отель предоставил отличный сервис и дружелюбный персонал. Я остался очень доволен своим выбором." FontSize="15" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="640" Margin="50 60 0 0"/>
+
+                        </Grid>
+
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
+                        </Border.Effect>
+                    </Border>
+
+                    <Border HorizontalAlignment="Left" Margin="5" Background="White" Width="700" Height="150" BorderThickness="3" BorderBrush="black">
+
+                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
+
+                            <Image Source="/Source/acc_logo.png" Height="40" Width="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 10 0 0"/>
+                            <TextBlock Text="Елена, 45 лет." FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="60 15 0 0"/>
+                            <Image Source="/Source/message.png" Height="25" Width="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15 60 0 0"/>
+                            <TextBlock Text="Номер в отеле оказался немного меньше, чем я ожидал, но все равно был комфортным и удобным. Все было чисто и аккуратно, а кровать была очень удобной. Отель также предлагал хороший завтрак и удобное расположение, что сделало мое пребывание приятным." FontSize="15" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="640" Margin="50 60 0 0"/>
+
+                        </Grid>
+
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
+                        </Border.Effect>
+                    </Border>
+
+                    <Border HorizontalAlignment="Left" Margin="5" Background="White" Width="700" Height="150" BorderThickness="3" BorderBrush="black">
+
+                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
+
+                            <Image Source="/Source/acc_logo.png" Height="40" Width="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 10 0 0"/>
+                            <TextBlock Text="Алексей, 28 лет." FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="60 15 0 0"/>
+                            <Image Source="/Source/message.png" Height="25" Width="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15 60 0 0"/>
+                            <TextBlock Text="Номер в отеле был просторным и красиво оформленным. Все было очень чисто и ухожено. Кровать была удобной, а ванная комната была современной и функциональной. Отель также предоставлял отличные удобства, такие как бассейн и тренажерный зал. Я остался очень доволен своим пребыванием." FontSize="15" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="640" Margin="50 60 0 0"/>
+
+                        </Grid>
+
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
+                        </Border.Effect>
+                    </Border>
+
+                    <Border HorizontalAlignment="Left" Margin="5" Background="White" Width="700" Height="150" BorderThickness="3" BorderBrush="black">
+
+                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
+
+                            <Image Source="/Source/acc_logo.png" Height="40" Width="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 10 0 0"/>
+                            <TextBlock Text="Ольга, 37 лет." FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="60 15 0 0"/>
+                            <Image Source="/Source/message.png" Height="25" Width="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15 60 0 0"/>
+                            <TextBlock Text="К сожалению, номер в отеле оказался не таким, как я ожидал. Он был маленьким и неудобным, а также не очень чистым. Кровать была неудобной, а ванная комната нуждалась в ремонте. Я был разочарован своим выбором отеля и не рекомендую его другим." FontSize="15" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="640" Margin="50 60 0 0"/>
+
+                        </Grid>
+
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
+                        </Border.Effect>
+                    </Border>
+
+                    <Border HorizontalAlignment="Left" Margin="5" Background="White" Width="700" Height="150" BorderThickness="3" BorderBrush="black">
+
+                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
+
+                            <Image Source="/Source/acc_logo.png" Height="40" Width="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 10 0 0"/>
+                            <TextBlock Text="Михаил, 41 год." FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="60 15 0 0"/>
+                            <Image Source="/Source/message.png" Height="25" Width="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15 60 0 0"/>
+                            <TextBlock Text="Номер в отеле был просторным, чистым и комфортным. Кровать была очень удобной, а ванная комната была современной и функциональной. Отель также предлагал отличный сервис и дружелюбный персонал. Я остался очень доволен своим пребыванием и рекомендую этот отель." FontSize="15" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="640" Margin="50 60 0 0"/>
+
+                        </Grid>
+
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
+                        </Border.Effect>
+                    </Border>
+
+                    <Border HorizontalAlignment="Left" Margin="5" Background="White" Width="700" Height="150" BorderThickness="3" BorderBrush="black">
+
+                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
+
+                            <Image Source="/Source/acc_logo.png" Height="40" Width="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 10 0 0"/>
+                            <TextBlock Text="Наталья, 29 лет." FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="60 15 0 0"/>
+                            <Image Source="/Source/message.png" Height="25" Width="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15 60 0 0"/>
+                            <TextBlock Text="Я останавливался в этом отеле на выходные и был приятно удивлен комфортом номера. Кровать была мягкой и удобной, а вид из окна был великолепным. В ванной комнате было все необходимое, и она была чистой. Отель также предлагал отличный Wi-Fi и вкусный завтрак. Я рекомендую этот отель для приятного пребывания." FontSize="15" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="640" Margin="50 60 0 0"/>
+
+                        </Grid>
+
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
+                        </Border.Effect>
+                    </Border>
+
+                    <Border HorizontalAlignment="Left" Margin="5" Background="White" Width="700" Height="150" BorderThickness="3" BorderBrush="black">
+
+                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
+
+                            <Image Source="/Source/acc_logo.png" Height="40" Width="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 10 0 0"/>
+                            <TextBlock Text="Андрей, 35 лет." FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="60 15 0 0"/>
+                            <Image Source="/Source/message.png" Height="25" Width="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15 60 0 0"/>
+                            <TextBlock Text="Номер в отеле был просторным и хорошо оборудованным. Кровать была очень удобной, и постельное белье было свежим и чистым. В ванной комнате было достаточно полотенец и все необходимые принадлежности. Отель также предлагал удобную парковку и бесплатный завтрак. Я остался очень доволен своим пребыванием." FontSize="15" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="640" Margin="50 60 0 0"/>
+
+                        </Grid>
+
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
+                        </Border.Effect>
+                    </Border>
+
+                    <Border HorizontalAlignment="Left" Margin="5" Background="White" Width="700" Height="150" BorderThickness="3" BorderBrush="black">
+
+                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
+
+                            <Image Source="/Source/acc_logo.png" Height="40" Width="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 10 0 0"/>
+                            <TextBlock Text="Евгений, 42 года." FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="60 15 0 0"/>
+                            <Image Source="/Source/message.png" Height="25" Width="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15 60 0 0"/>
+                            <TextBlock Text="Номер в отеле оказался очень просторным и стильно оформленным. Кровать была удобной, и вся мебель была новой и современной. В ванной комнате был большой душ и все необходимые принадлежности. Отель также предлагал отличный ресторан и бар, где можно было насладиться вкусными блюдами и напитками. Я рекомендую этот отель для комфортного проживания." FontSize="15" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="640" Margin="50 60 0 0"/>
+
+                        </Grid>
+
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
+                        </Border.Effect>
+                    </Border>
+
+                    <Border HorizontalAlignment="Left" Margin="5" Background="White" Width="700" Height="150" BorderThickness="3" BorderBrush="black">
+
+                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
+
+                            <Image Source="/Source/acc_logo.png" Height="40" Width="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 10 0 0"/>
+                            <TextBlock Text="Олег, 31 год." FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="60 15 0 0"/>
+                            <Image Source="/Source/message.png" Height="25" Width="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15 60 0 0"/>
+                            <TextBlock Text="Номер в отеле оказался не таким, как я ожидал. Он был маленьким и неудобным, а также не очень чистым. Кровать была неудобной, и шум из соседних номеров был раздражающим. Я был разочарован своим пребыванием и не рекомендую этот отель." FontSize="15" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="640" Margin="50 60 0 0"/>
+
+                        </Grid>
+
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
+                        </Border.Effect>
+                    </Border>
+
+                    <Border HorizontalAlignment="Left" Margin="5" Background="White" Width="700" Height="150" BorderThickness="3" BorderBrush="black">
+
+                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
+
+                            <Image Source="/Source/acc_logo.png" Height="40" Width="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 10 0 0"/>
+                            <TextBlock Text="Дмитрий, 39 лет." FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="60 15 0 0"/>
+                            <Image Source="/Source/message.png" Height="25" Width="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15 60 0 0"/>
+                            <TextBlock Text="Я останавливался в этом отеле во время деловой поездки, и номер оказался прекрасным. Он был просторным, чистым и уютным. Кровать была очень удобной, и я отлично выспался. В ванной комнате были все необходимые принадлежности, и она была чистой. Отель также предоставлял отличный сервис и удобное расположение. Я остался очень доволен своим пребыванием." FontSize="15" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="640" Margin="50 60 0 0"/>
+
+                        </Grid>
+
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
+                        </Border.Effect>
+                    </Border>
+
+                </StackPanel>
+            </ScrollViewer>
+
+
+        </Grid>
+
+
+        <Grid Name="Toolbar" Width="800" Height="35" VerticalAlignment="Top" Grid.Row="0" Background="Transparent" MouseDown="Toolbar_MouseDown">
+
+            <Button Style="{StaticResource btn2}" BorderThickness="0" Background="#291C11" Height="35" Width="35" HorizontalAlignment="Right" VerticalAlignment="Center" Click="Button_Click_1">
+                <Image x:Name="ExitButt" Source="/Source/krestneaktiv.png" Height="15" Width="15" Stretch="Fill" Margin="0,3,0,0"/>
+            </Button>
+
+            <Button Style="{StaticResource btn3}"  BorderThickness="0" Background="#291C11" Height="35" Width="35" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 0 35 0" Click="Button_Click_2">
+                <Image Name="MinButt" Source="/Source/palkaneaktiv.png" Height="15" Width="15" Stretch="Fill" Margin="0,8,0,0"/>
+            </Button>
+
+        </Grid>
+
+    </Grid>
+</Window>

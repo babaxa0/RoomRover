@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace RoomRover
 {
     /// <summary>
-    /// Логика взаимодействия для Reserve.xaml
+    /// Логика взаимодействия для Add_report.xaml
     /// </summary>
-    public partial class Reserve : Window
+    public partial class Add_report : Window
     {
-        public Reserve()
+        public Add_report()
         {
             InitializeComponent();
         }
@@ -41,44 +41,43 @@ namespace RoomRover
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            PayRoom1 payRoom1 = new PayRoom1();
-            payRoom1.Show();
-            this.Close();
-        }
-
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            PayRoom2 payRoom2 = new PayRoom2();
-            payRoom2.Show();
+            HomePageAdmin homePageAdmin = new HomePageAdmin();
+            homePageAdmin.Show();
             this.Close();
         }
 
-        private void Button_Click_4(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            PayRoom3 payRoom3 = new PayRoom3();
-            payRoom3.Show();
-            this.Close();
+            if (tb2.Text == "")
+            {
+                MessageBox.Show("Заполните поле дохода.");
+                
+            }
+            else
+            {
+                if (tb3.Text == "")
+                {
+                    MessageBox.Show("Заполните поле расхода.");
+                }
+                else
+                {
+                    int x, y, z;
+                    string s1 = tb2.Text;
+                    x = Convert.ToInt32(s1);
+                    string s2 = tb3.Text;s
+                    y = Convert.ToInt32(s2);
+                    z = x - y;
+                    tb4.Text = z.ToString();
+                }
+            }
         }
 
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
-            PayRoom4 payRoom4 = new PayRoom4();
-            payRoom4.Show();
-            this.Close();
-        }
-
-        private void Button_Click_6(object sender, RoutedEventArgs e)
-        {
-            PayRoom5 payRoom5 = new PayRoom5();
-            payRoom5.Show();
-            this.Close();
-        }
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            HomePageGuest homePageGuest = new HomePageGuest();
-            homePageGuest.Show();
+            HomePageAdmin homePageAdmin = new HomePageAdmin();
+            homePageAdmin.Show();
             this.Close();
         }
     }

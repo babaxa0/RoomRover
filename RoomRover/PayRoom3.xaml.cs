@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace RoomRover
 {
     /// <summary>
-    /// Логика взаимодействия для Reserve.xaml
+    /// Логика взаимодействия для PayRoom3.xaml
     /// </summary>
-    public partial class Reserve : Window
+    public partial class PayRoom3 : Window
     {
-        public Reserve()
+        public PayRoom3()
         {
             InitializeComponent();
         }
@@ -39,41 +39,6 @@ namespace RoomRover
             {
                 this.DragMove();
             }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            PayRoom1 payRoom1 = new PayRoom1();
-            payRoom1.Show();
-            this.Close();
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            PayRoom2 payRoom2 = new PayRoom2();
-            payRoom2.Show();
-            this.Close();
-        }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            PayRoom3 payRoom3 = new PayRoom3();
-            payRoom3.Show();
-            this.Close();
-        }
-
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
-            PayRoom4 payRoom4 = new PayRoom4();
-            payRoom4.Show();
-            this.Close();
-        }
-
-        private void Button_Click_6(object sender, RoutedEventArgs e)
-        {
-            PayRoom5 payRoom5 = new PayRoom5();
-            payRoom5.Show();
-            this.Close();
         }
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {

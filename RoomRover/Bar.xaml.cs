@@ -10,26 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace RoomRover
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Bar.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Bar : Window
     {
-        public MainWindow()
+        public Bar()
         {
             InitializeComponent();
         }
-        private void ExitButt_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void MinButt_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
         }
@@ -39,22 +38,6 @@ namespace RoomRover
             if (e.ChangedButton == MouseButton.Left)
             {
                 this.DragMove();
-            }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if(tb1.Text == "1")
-            {
-                HomePageGuest homePage = new HomePageGuest();
-                homePage.Show();
-                this.Close();
-            }
-            if (tb1.Text == "2")
-            {
-                HomePageAdmin homePageAdmin = new HomePageAdmin();
-                homePageAdmin.Show();
-                this.Close();
             }
         }
     }

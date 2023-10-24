@@ -1,11 +1,11 @@
-﻿<Window x:Class="RoomRover.PayRoom"
+﻿<Window x:Class="RoomRover.SpaFitness"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoomRover"
         mc:Ignorable="d"
-        Title="PayRoom" Height="500" Width="800" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="HomePageGuset" Height="500" Width="800" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <Style x:Key="TB" TargetType="TextBox">
@@ -49,7 +49,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="1" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" CornerRadius="13" BorderBrush="#24180F">
+                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="1" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" CornerRadius="35" BorderBrush="#24180F">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
 
@@ -60,9 +60,9 @@
                                 <Trigger.EnterActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <DoubleAnimation To="180"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
-                                            <DoubleAnimation To="33"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
-                                            <ColorAnimation To="#00346B" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.2"/>
+                                            <DoubleAnimation To="360"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
+                                            <DoubleAnimation To="75"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
+                                            <ColorAnimation To="White" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.3"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.EnterActions>
@@ -70,9 +70,9 @@
                                 <Trigger.ExitActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <DoubleAnimation To="175"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
-                                            <DoubleAnimation To="30"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
-                                            <ColorAnimation To="#00346B" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.2"/>
+                                            <DoubleAnimation To="350"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
+                                            <DoubleAnimation To="70"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
+                                            <ColorAnimation To="White" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.3"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.ExitActions>
@@ -166,7 +166,7 @@
                                 <Trigger.EnterActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <ColorAnimation To="#007787" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
+                                            <ColorAnimation To="#1C130B" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.EnterActions>
@@ -174,7 +174,7 @@
                                 <Trigger.ExitActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <ColorAnimation To="#00A7BD" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
+                                            <ColorAnimation To="#322214" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.ExitActions>
@@ -187,19 +187,26 @@
 
     </Window.Resources>
 
-    <Grid>
-        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="730" Height="430" Background="#00CFEB">
+    <Grid Width="800" Height="500" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#00A7BD" Offset="0"/>
+                <GradientStop Color="#00E1FF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
 
-            <TextBlock x:Name="Name_room" Text="Name_room" FontSize="32" Margin="50 50 0 0"/>
+        <Grid Width="800" Height="465" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+
+            <Image Source="/Source/fitness.jpg" Width="400" Height="300" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Image Source="/Source/spa.jpg" Width="400" Height="300" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+            <Border Width="800" Height="300" Background="Black" VerticalAlignment="Top" Opacity="0.65"/>
+            <TextBlock Width="400" Height="300" VerticalAlignment="Top" HorizontalAlignment="Left" Text="ФИТНЕСС" Foreground="White" FontSize="70" Padding="35 95 0 0" MouseDown="TextBlock_MouseDown"/>
+            <TextBlock Width="400" Height="300" VerticalAlignment="Top" HorizontalAlignment="Right" Text="СПА" Foreground="White" FontSize="70" Padding="130 95 0 0" MouseDown="TextBlock_MouseDown_1"/>
+            <Button Style="{StaticResource btn1}" Width="350" Height="70" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 50" Content="ВЕРНУТЬСЯ НАЗАД" FontSize="30" Click="Button_Click"/>
 
         </Grid>
 
-
-        <Grid Width="35" Height="500" VerticalAlignment="Center" HorizontalAlignment="Right" Background="#291C11"/>
-        <Grid Width="35" Height="500" VerticalAlignment="Center" HorizontalAlignment="Left" Background="#291C11"/>
-        <Grid Width="800" Height="35" VerticalAlignment="Bottom" HorizontalAlignment="Center" Background="#291C11"/>
         <Grid Width="800" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center" Background="#291C11"/>
-
         <Grid Name="Toolbar" Width="800" Height="35" VerticalAlignment="Top" Grid.Row="0" Background="Transparent" MouseDown="Toolbar_MouseDown">
 
             <Button Style="{StaticResource btn2}" BorderThickness="0" Background="#291C11" Height="35" Width="35" HorizontalAlignment="Right" VerticalAlignment="Center" Click="Button_Click_1">
@@ -213,4 +220,7 @@
         </Grid>
 
     </Grid>
+
+
+
 </Window>

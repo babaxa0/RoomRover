@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace RoomRover
 {
     /// <summary>
-    /// Логика взаимодействия для HomePageGuest.xaml
+    /// Логика взаимодействия для SpaFitness.xaml
     /// </summary>
-    public partial class HomePageGuest : Window
+    public partial class SpaFitness : Window
     {
-        public HomePageGuest()
+        public SpaFitness()
         {
             InitializeComponent();
         }
@@ -43,36 +43,22 @@ namespace RoomRover
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            HomePageGuest homePageGuest = new HomePageGuest();
+            homePageGuest.Show();
             this.Close();
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Otzivi otzivi = new Otzivi();
-            otzivi.Show();
-            this.Close();
-        }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            Reserve reserve = new Reserve();
-            reserve.Show();
-            this.Close();
-        }
-
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
-            SpaFitness fitness = new SpaFitness();
+            Fitness fitness = new Fitness();
             fitness.Show();
             this.Close();
         }
 
-        private void Button_Click_6(object sender, RoutedEventArgs e)
+        private void TextBlock_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
-            RestBar restBar = new RestBar();
-            restBar.Show();
+            Spa spa = new Spa();
+            spa.Show();
             this.Close();
         }
     }

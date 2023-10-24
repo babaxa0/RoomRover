@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace RoomRover
 {
     /// <summary>
-    /// Логика взаимодействия для PayRoom.xaml
+    /// Логика взаимодействия для Spa.xaml
     /// </summary>
-    public partial class PayRoom : Window
+    public partial class Spa : Window
     {
-        public PayRoom()
+        public Spa()
         {
             InitializeComponent();
         }

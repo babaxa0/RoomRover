@@ -1,11 +1,11 @@
-﻿<Window x:Class="RoomRover.Reserve"
+﻿<Window x:Class="RoomRover.Bar"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoomRover"
         mc:Ignorable="d"
-        Title="Reserve" Height="500" Width="800" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="HomePageGuset" Height="500" Width="800" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <Style x:Key="TB" TargetType="TextBox">
@@ -49,7 +49,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="1" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" CornerRadius="13" BorderBrush="#24180F">
+                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="1" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" CornerRadius="25" BorderBrush="#24180F">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
 
@@ -60,9 +60,9 @@
                                 <Trigger.EnterActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <DoubleAnimation To="180"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
-                                            <DoubleAnimation To="33"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
-                                            <ColorAnimation To="#00346B" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.2"/>
+                                            <DoubleAnimation To="260"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
+                                            <DoubleAnimation To="55"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
+                                            <ColorAnimation To="White" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.3"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.EnterActions>
@@ -70,9 +70,9 @@
                                 <Trigger.ExitActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <DoubleAnimation To="175"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
-                                            <DoubleAnimation To="30"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
-                                            <ColorAnimation To="#00346B" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.2"/>
+                                            <DoubleAnimation To="250"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
+                                            <DoubleAnimation To="50"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
+                                            <ColorAnimation To="White" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.3"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.ExitActions>
@@ -166,7 +166,7 @@
                                 <Trigger.EnterActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <ColorAnimation To="#007787" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
+                                            <ColorAnimation To="#1C130B" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.EnterActions>
@@ -174,7 +174,7 @@
                                 <Trigger.ExitActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <ColorAnimation To="#00A7BD" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
+                                            <ColorAnimation To="#322214" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.ExitActions>
@@ -187,112 +187,25 @@
 
     </Window.Resources>
 
-    <Grid>
+    <Grid Width="800" Height="500" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#00A7BD" Offset="0"/>
+                <GradientStop Color="#00E1FF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid Width="800" Height="465" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+
+            <Image Source="/Source/bar.jpg" Width="800" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+            <Border Width="800" Height="465" Background="Black" VerticalAlignment="Top" Opacity="0.65"/>
+            <TextBlock Text="Цена безлимитного посещения" FontSize="35" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="110 0 0 180"/>
+            <TextBlock Text="6000 руб." FontSize="35" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="110 0 0 30"/>
+            <Button Height="50" Width="250" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="110 100 0 0" Content="Приобрести" FontSize="26" Style="{StaticResource btn1}"/>
+
+        </Grid>
 
         <Grid Width="800" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center" Background="#291C11"/>
-
-        <Grid Height="465" Width="35" VerticalAlignment="Bottom" HorizontalAlignment="Left">
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#291C11" Offset="0"/>
-                    <GradientStop Color="#3B2818" Offset="1"/>
-                </LinearGradientBrush>
-            </Grid.Background>
-            <Image Source="/Source/arrow_back.png" Width="25" Height="25" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 30 0 0"  MouseDown="Image_MouseDown"/>
-
-        </Grid>
-
-        <Grid Height="465" Width="765" VerticalAlignment="Bottom" Background="White" HorizontalAlignment="Right">
-
-            <ScrollViewer>
-                <StackPanel>
-
-                    <Border HorizontalAlignment="Left" Margin="5" Background="#00A7BD" Width="745" Height="150" BorderThickness="0">
-
-                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
-                           
-                            <TextBlock Width="280" Text="Комфорт" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="24" Padding="10 15 0 0" FontWeight="Bold"/>
-                            <TextBlock Width="280" Text="Стоимость номера от 7 900 руб./сутки" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="14" Padding="10 70 0 0"/>
-                            <Image Source="/Source/room1.jpg" Height="150" Margin="290 0 0 0"/>
-
-                            <Button Style="{StaticResource btn1}" VerticalAlignment="Bottom" BorderThickness="0" Background="#00346B" Content="Забронировать" Foreground="White" FontSize="16" FontWeight="bold" Padding="0 0 0 2" HorizontalAlignment="Left" Width="175" Height="30" Margin="10 0 0 10" Click="Button_Click"/>
-
-                        </Grid>
-
-                        <Border.Effect>
-                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
-                        </Border.Effect>
-                    </Border>
-
-                    <Border HorizontalAlignment="Left" Margin="5" Background="#00A7BD" Width="745" Height="150" BorderThickness="0">
-
-                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
-                            
-                            <TextBlock Width="280" Text="Улучшенный номер" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="24" Padding="10 15 0 0" FontWeight="Bold"/>
-                            <TextBlock Width="280" Text="Стоимость номера от 13 600 руб./сутки" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="14" Padding="10 70 0 0"/>
-                            <Image Source="/Source/room2.jpg" Margin="290 0 0 0"/>
-
-                            <Button Style="{StaticResource btn1}" VerticalAlignment="Bottom" BorderThickness="0" Background="#00346B" Content="Забронировать" Foreground="White" FontSize="16" FontWeight="bold" Padding="0 0 0 2" HorizontalAlignment="Left" Width="175" Height="30" Margin="10 0 0 10" Click="Button_Click_3"/>
-                        </Grid>
-
-                        <Border.Effect>
-                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
-                        </Border.Effect>
-                    </Border>
-
-                    <Border HorizontalAlignment="Left" Margin="5" Background="#00A7BD" Width="745" Height="150" BorderThickness="0">
-
-                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
-                            
-                            <TextBlock Width="280" Text="Люкс" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="24" Padding="10 15 0 0" FontWeight="Bold"/>
-                            <TextBlock Width="280" Text="Стоимость номера от 20 600 руб./сутки" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="14" Padding="10 70 0 0"/>
-                            <Image Source="/Source/room3.jpg" Margin="290 0 0 0"/>
-
-                            <Button Style="{StaticResource btn1}" VerticalAlignment="Bottom" BorderThickness="0" Background="#00346B" Content="Забронировать" Foreground="White" FontSize="16" FontWeight="bold" Padding="0 0 0 2" HorizontalAlignment="Left" Width="175" Height="30" Margin="10 0 0 10" Click="Button_Click_4"/>
-                        </Grid>
-                        
-                        <Border.Effect>
-                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
-                        </Border.Effect>
-                    </Border>
-
-                    <Border HorizontalAlignment="Left" Margin="5" Background="#00A7BD" Width="745" Height="150" BorderThickness="0">
-
-                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
-                            
-                            <TextBlock Width="280" Text="Апартаменты «Миллениум»" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="18" Padding="10 15 0 0" FontWeight="Bold"/>
-                            <TextBlock Width="280" Text="Стоимость номера от 26 900 руб./сутки" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="14" Padding="10 70 0 0"/>
-                            <Image Source="/Source/room4.jpg" Margin="290 0 0 0"/>
-
-                            <Button Style="{StaticResource btn1}" VerticalAlignment="Bottom" BorderThickness="0" Background="#00346B" Content="Забронировать" Foreground="White" FontSize="16" FontWeight="bold" Padding="0 0 0 2" HorizontalAlignment="Left" Width="175" Height="30" Margin="10 0 0 10" Click="Button_Click_5"/>
-                        </Grid>
-                        
-                        <Border.Effect>
-                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
-                        </Border.Effect>
-                    </Border>
-
-                    <Border HorizontalAlignment="Left" Margin="5" Background="#00A7BD" Width="745" Height="150" BorderThickness="0">
-
-                        <Grid Width="737" HorizontalAlignment="Left" Margin="0 0 0 0">
-                            
-                            <TextBlock Width="280" Text="Президентские апартаменты" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="18" Padding="10 15 0 0" FontWeight="Bold"/>
-                            <TextBlock Width="280" Text="Стоимость номера от 31 400 руб./сутки" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="14" Padding="10 70 0 0"/>
-                            <Image Source="/Source/room5.jpg" Margin="290 0 0 0"/>
-
-                            <Button Style="{StaticResource btn1}" VerticalAlignment="Bottom" BorderThickness="0" Background="#00346B" Content="Забронировать" Foreground="White" FontSize="16" FontWeight="bold" Padding="0 0 0 2" HorizontalAlignment="Left" Width="175" Height="30" Margin="10 0 0 10" Click="Button_Click_6"/>
-                        </Grid>
-                        
-                        <Border.Effect>
-                            <DropShadowEffect BlurRadius="10" Direction="260" ShadowDepth="3" Opacity="0.6"/>
-                        </Border.Effect>
-                    </Border>
-
-                </StackPanel>
-            </ScrollViewer>
-            
-        </Grid>
-
         <Grid Name="Toolbar" Width="800" Height="35" VerticalAlignment="Top" Grid.Row="0" Background="Transparent" MouseDown="Toolbar_MouseDown">
 
             <Button Style="{StaticResource btn2}" BorderThickness="0" Background="#291C11" Height="35" Width="35" HorizontalAlignment="Right" VerticalAlignment="Center" Click="Button_Click_1">
@@ -303,9 +216,10 @@
                 <Image Name="MinButt" Source="/Source/palkaneaktiv.png" Height="15" Width="15" Stretch="Fill" Margin="0,8,0,0"/>
             </Button>
 
-
-
         </Grid>
 
     </Grid>
+
+
+
 </Window>
