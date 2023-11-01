@@ -23,11 +23,21 @@ namespace RoomRover.AddBase
     
         public int id_guest { get; set; }
         public string Name_guest { get; set; }
-        public int id_room { get; set; }
-        public int id_acc { get; set; }
+        public Nullable<int> id_room { get; set; }
+        public Nullable<int> id_acc { get; set; }
+        public Nullable<int> Balance { get; set; }
+        public Nullable<int> Id_spa { get; set; }
+        public Nullable<int> Id_fitness { get; set; }
+        public Nullable<int> Id_Rest { get; set; }
+        public Nullable<int> Id_Bar { get; set; }
     
         public virtual Account Account { get; set; }
+        public virtual Bar Bar { get; set; }
+        public virtual Fitness Fitness { get; set; }
+        public virtual Rest Rest { get; set; }
+        public virtual Restaurant Restaurant { get; set; }
         public virtual Room Room { get; set; }
+        public virtual Spa Spa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reservation> Reservation { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

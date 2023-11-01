@@ -22,8 +22,8 @@ namespace RoomRover.AddBase
         }
     
         public int id_room { get; set; }
-        public int id_hotel { get; set; }
-        public Nullable<int> price_life { get; set; }
+        public Nullable<int> id_hotel { get; set; }
+        public string name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Guest> Guest { get; set; }

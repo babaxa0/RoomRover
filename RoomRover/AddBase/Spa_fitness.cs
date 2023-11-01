@@ -18,13 +18,18 @@ namespace RoomRover.AddBase
         public Spa_fitness()
         {
             this.Check = new HashSet<Check>();
+            this.Fitness = new HashSet<Fitness>();
+            this.Spa = new HashSet<Spa>();
         }
     
         public int id_uslugi { get; set; }
         public string name_uslugi { get; set; }
-        public int price_uslugi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Check> Check { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Fitness> Fitness { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Spa> Spa { get; set; }
     }
 }

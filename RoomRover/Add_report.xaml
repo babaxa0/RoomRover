@@ -241,7 +241,7 @@
             </Grid.Background>
 
             <TextBox  x:Name="tb1" Style="{StaticResource TB}" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 75 0 0"/>
-            <TextBlock IsHitTestVisible="False" FontSize="18" Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Дата" Grid.Row="2" Margin="224 85 0 0" Foreground="#A6A6A6" FontFamily="Britannic Bold">
+            <TextBlock  IsHitTestVisible="False" FontSize="18" Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Дата" Grid.Row="2" Margin="224 85 0 0" Foreground="#A6A6A6" FontFamily="Britannic Bold">
                 <TextBlock.Style>
                     <Style TargetType="{x:Type TextBlock}">
                         <Setter Property="Visibility" Value="Collapsed"/>
@@ -254,7 +254,7 @@
                 </TextBlock.Style>
             </TextBlock>
             <TextBox x:Name="tb2" Style="{StaticResource TB}" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 150 0 0"/>
-            <TextBlock IsHitTestVisible="False" FontSize="18" Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Доход" Grid.Row="2" Margin="224 160 0 0" Foreground="#A6A6A6" FontFamily="Britannic Bold">
+            <TextBlock x:Name="DohFin"  IsHitTestVisible="False" FontSize="18" Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Доход" Grid.Row="2" Margin="224 160 0 0" Foreground="#A6A6A6" FontFamily="Britannic Bold">
                 <TextBlock.Style>
                     <Style TargetType="{x:Type TextBlock}">
                         <Setter Property="Visibility" Value="Collapsed"/>
@@ -267,7 +267,7 @@
                 </TextBlock.Style>
             </TextBlock>
             <TextBox x:Name="tb3" Style="{StaticResource TB}" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 225 0 0"/>
-            <TextBlock IsHitTestVisible="False" FontSize="18" Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Расход" Grid.Row="2" Margin="224 235 0 0" Foreground="#A6A6A6" FontFamily="Britannic Bold">
+            <TextBlock x:Name="RasFin" IsHitTestVisible="False" FontSize="18" Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Расход" Grid.Row="2" Margin="224 235 0 0" Foreground="#A6A6A6" FontFamily="Britannic Bold">
                 <TextBlock.Style>
                     <Style TargetType="{x:Type TextBlock}">
                         <Setter Property="Visibility" Value="Collapsed"/>
@@ -280,7 +280,7 @@
                 </TextBlock.Style>
             </TextBlock>
             <TextBox x:Name="tb4" Style="{StaticResource TB}" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 300 0 0"/>
-            <TextBlock IsHitTestVisible="False" FontSize="18" Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Прибыль" Grid.Row="2" Margin="224 310 0 0" Foreground="#A6A6A6" FontFamily="Britannic Bold">
+            <TextBlock x:Name="PribFin" IsHitTestVisible="False" FontSize="18" Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Прибыль" Grid.Row="2" Margin="224 310 0 0" Foreground="#A6A6A6" FontFamily="Britannic Bold">
                 <TextBlock.Style>
                     <Style TargetType="{x:Type TextBlock}">
                         <Setter Property="Visibility" Value="Collapsed"/>
@@ -294,7 +294,7 @@
             </TextBlock>
 
             <StackPanel Margin="0 0 0 25" Width="160" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                <Button Style="{StaticResource btn1}" Content="Сохранить" FontSize="16" FontFamily="Britannic Bold" Width="150" Height="40" Margin="0 5 0 0" Click="Button_Click_3"/>
+                <Button x:Name="Finance" Click="Finance_Click" Style="{StaticResource btn1}" Content="Сохранить" FontSize="16" FontFamily="Britannic Bold" Width="150" Height="40" Margin="0 5 0 0" />
             </StackPanel>
 
             <StackPanel Margin="0 210 80 0" Width="130" Height="50" VerticalAlignment="Center" HorizontalAlignment="Right">

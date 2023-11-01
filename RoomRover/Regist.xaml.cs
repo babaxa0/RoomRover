@@ -16,25 +16,23 @@ using RoomRover.AddBase;
 namespace RoomRover
 {
     /// <summary>
-    /// Логика взаимодействия для SpaFitness.xaml
+    /// Логика взаимодействия для Regist.xaml
     /// </summary>
-    public partial class SpaFitness : Window
+    public partial class Regist : Window
     {
         RoomRover1Entities3 RoomRover1Entities3 { get; set; }
 
-        Guest Guest { get; set; }
-        public SpaFitness(Guest guest)
+        public Regist()
         {
             InitializeComponent();
             RoomRover1Entities3 = new RoomRover1Entities3();
-            Guest = guest;
         }
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void ExitButt_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.Close();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void MinButt_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
         }
@@ -46,25 +44,37 @@ namespace RoomRover
                 this.DragMove();
             }
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            HomePageGuest homePageGuest = new HomePageGuest(Guest);
-            homePageGuest.Show();
-            this.Close();
-        }
-
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Fitness fitness = new Fitness(Guest);
-            fitness.Show();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Close();
         }
-
-        private void TextBlock_MouseDown_1(object sender, MouseButtonEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Spa spa = new Spa(Guest);
-            spa.Show();
+            var account = new Account
+            {
+                login = RegLogBox.Text,
+                password = RegLogBox.Text,
+                Id_role = 1   
+            };
+
+            var guest = new Guest
+            {
+                Account = account,
+                Name_guest = RegNameBox.Text,
+                id_acc = account.id_acc,
+                Balance = 0,
+                id_room = 7
+            };
+
+
+            RoomRover1Entities3.Account.Add(account);
+            RoomRover1Entities3.Guest.Add(guest);
+            RoomRover1Entities3.SaveChanges();
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Close();
         }
     }

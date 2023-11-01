@@ -70,6 +70,9 @@
     <Compile Include="AddBase\Admin.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="AddBase\Bar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="AddBase\Check.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -77,6 +80,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="AddBase\Finance.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AddBase\Fitness.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="AddBase\Guest.cs">
@@ -103,13 +109,25 @@
     <Compile Include="AddBase\Reservation.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="AddBase\Rest.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="AddBase\Restaurant.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="AddBase\Review.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="AddBase\RGB_Uslugi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AddBase\Role.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="AddBase\Room.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AddBase\Spa.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="AddBase\Spa_fitness.cs">
@@ -136,6 +154,11 @@
     <Compile Include="HomePageAdmin.xaml.cs">
       <DependentUpon>HomePageAdmin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyClass\Admin.cs" />
+    <Compile Include="MyClass\Guest.cs" />
+    <Compile Include="MyUslugi.xaml.cs">
+      <DependentUpon>MyUslugi.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Otzivi.xaml.cs">
       <DependentUpon>Otzivi.xaml</DependentUpon>
     </Compile>
@@ -154,6 +177,9 @@
     <Compile Include="PayRoom5.xaml.cs">
       <DependentUpon>PayRoom5.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Regist.xaml.cs">
+      <DependentUpon>Regist.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Reserve.xaml.cs">
       <DependentUpon>Reserve.xaml</DependentUpon>
     </Compile>
@@ -168,6 +194,9 @@
     </Compile>
     <Compile Include="SpaFitness.xaml.cs">
       <DependentUpon>SpaFitness.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpBalance.xaml.cs">
+      <DependentUpon>UpBalance.xaml</DependentUpon>
     </Compile>
     <Page Include="Add_report.xaml">
       <SubType>Designer</SubType>
@@ -204,6 +233,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MyUslugi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Otzivi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -228,6 +261,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Regist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Reserve.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -245,6 +282,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SpaFitness.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpBalance.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -328,22 +369,24 @@
     <Resource Include="Source\rest.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AddBase\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
-    <Content Include="AddBase\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
     <Resource Include="Source\arrow_back.png" />
     <Resource Include="Source\message.png" />
     <Resource Include="Source\acc_logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddBase\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="AddBase\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

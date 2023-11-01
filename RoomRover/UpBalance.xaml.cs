@@ -13,17 +13,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using RoomRover.AddBase;
 
+
 namespace RoomRover
 {
     /// <summary>
-    /// Логика взаимодействия для PayRoom4.xaml
+    /// Логика взаимодействия для UpBalance.xaml
     /// </summary>
-    public partial class PayRoom4 : Window
+    public partial class UpBalance : Window
     {
         RoomRover1Entities3 RoomRover1Entities3 { get; set; }
-
+         
         Guest Guest { get; set; }
-        public PayRoom4(Guest guest)
+        public UpBalance(Guest guest)
         {
             InitializeComponent();
             RoomRover1Entities3 = new RoomRover1Entities3();
@@ -46,31 +47,16 @@ namespace RoomRover
                 this.DragMove();
             }
         }
-        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            HomePageGuest homePageGuest = new HomePageGuest(Guest);
+            var guest = RoomRover1Entities3.Guest.ToList().Where(x => x.id_guest == Guest.id_guest).FirstOrDefault();
+            guest.Balance += Convert.ToInt32(BalanceBox.Text);
+            RoomRover1Entities3.SaveChanges();
+
+            HomePageGuest homePageGuest = new HomePageGuest(guest);
             homePageGuest.Show();
             this.Close();
-        }
-
-        private void BronRoom4_Click(object sender, RoutedEventArgs e)
-        {
-            if (Guest.Balance >= 26900)
-            {
-                Guest.Balance -= 26900;
-                var guest = RoomRover1Entities3.Guest.ToList().Where(x => x.id_guest == Guest.id_guest).FirstOrDefault();
-                guest.Balance = Guest.Balance;
-                guest.id_room = 5;
-                RoomRover1Entities3.SaveChanges();
-                MessageBox.Show("Вы оформили номер!");
-                HomePageGuest homePageGuest = new HomePageGuest(guest);
-                homePageGuest.Show();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Недостаточно средств");
-            }
         }
     }
 }

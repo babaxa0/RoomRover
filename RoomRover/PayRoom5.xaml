@@ -195,7 +195,7 @@
             <Border Width="300" Height="187" VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="#FFFBED"/>
             <TextBlock Width="300" Height="187" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="Стоимость номера" FontSize="20" Padding="10 5 0 0"/>
             <TextBlock Width="300" Height="187" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="От 31 400 руб. / сутки" FontSize="29" Padding="10 45 0 0"/>
-            <Button Style="{StaticResource btn1}" Background="#00CFEB" Content="Забронировать" FontSize="24" Width="200" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="50 0 0 25"/>
+            <Button x:Name="BronRoom5" Click="BronRoom5_Click" Style="{StaticResource btn1}" Background="#00CFEB" Content="Забронировать" FontSize="24" Width="200" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="50 0 0 25"/>
             <Border Width="430" Height="187" Background="#FFFBED" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
             <Image Source="/Source/square.png" Width="100" Height="100" Margin="0 0 50 50" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
             <Image Source="/Source/wifi.png" Width="100" Height="100" Margin="175 0 0 50" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>

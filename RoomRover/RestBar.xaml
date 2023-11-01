@@ -200,8 +200,8 @@
             <Image Source="/Source/rest.jpg" Width="400" Height="300" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <Image Source="/Source/bar.jpg" Width="400" Height="300" VerticalAlignment="Top" HorizontalAlignment="Right"/>
             <Border Width="800" Height="300" Background="Black" VerticalAlignment="Top" Opacity="0.65"/>
-            <TextBlock Width="400" Height="300" VerticalAlignment="Top" HorizontalAlignment="Left" Text="ФИТНЕСС" Foreground="White" FontSize="70" Padding="35 95 0 0" MouseDown="TextBlock_MouseDown"/>
-            <TextBlock Width="400" Height="300" VerticalAlignment="Top" HorizontalAlignment="Right" Text="СПА" Foreground="White" FontSize="70" Padding="130 95 0 0" MouseDown="TextBlock_MouseDown_1"/>
+            <TextBlock Width="400" Height="300" VerticalAlignment="Top" HorizontalAlignment="Left" Text="РЕСТОРАН" Foreground="White" FontSize="70" Padding="35 95 0 0" MouseDown="TextBlock_MouseDown"/>
+            <TextBlock Width="400" Height="300" VerticalAlignment="Top" HorizontalAlignment="Right" Text="БАР" Foreground="White" FontSize="70" Padding="130 95 0 0" MouseDown="TextBlock_MouseDown_1"/>
             <Button Style="{StaticResource btn1}" Width="350" Height="70" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 50" Content="ВЕРНУТЬСЯ НАЗАД" FontSize="30" Click="Button_Click"/>
 
         </Grid>

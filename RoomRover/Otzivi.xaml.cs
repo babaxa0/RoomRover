@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using RoomRover.AddBase;
+
 
 namespace RoomRover
 {
@@ -19,9 +21,14 @@ namespace RoomRover
     /// </summary>
     public partial class Otzivi : Window
     {
-        public Otzivi()
+        RoomRover1Entities3 RoomRover1Entities3 { get; set; }
+
+        Guest Guest { get; set; }
+        public Otzivi(Guest guest)
         {
             InitializeComponent();
+            RoomRover1Entities3 = new RoomRover1Entities3();
+            Guest = guest; 
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -43,9 +50,9 @@ namespace RoomRover
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            HomePageGuest homePageGuest = new HomePageGuest();
-            homePageGuest.Show();
-            this.Close();
+           HomePageGuest homePageGuest = new HomePageGuest(Guest);
+           homePageGuest.Show();
+           this.Close();
         }
     }
 }

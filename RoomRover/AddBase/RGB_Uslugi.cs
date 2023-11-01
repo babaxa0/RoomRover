@@ -12,15 +12,12 @@ namespace RoomRover.AddBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Finance
+    public partial class RGB_Uslugi
     {
-        public int id_finance { get; set; }
-        public int income { get; set; }
-        public int consumption { get; set; }
-        public int profit { get; set; }
-        public int id_admin { get; set; }
-        public System.DateTime Date_Finance { get; set; }
-    
-        public virtual Admin Admin { get; set; }
+        public int id_human { get; set; }
+        public bool spa { get; set; }
+        public bool fitnes { get; set; }
+        public bool bar { get; set; }
+        public bool restor { get; set; }
     }
 }

@@ -12,15 +12,19 @@ namespace RoomRover.AddBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Finance
+    public partial class Bar
     {
-        public int id_finance { get; set; }
-        public int income { get; set; }
-        public int consumption { get; set; }
-        public int profit { get; set; }
-        public int id_admin { get; set; }
-        public System.DateTime Date_Finance { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Bar()
+        {
+            this.Guest = new HashSet<Guest>();
+        }
     
-        public virtual Admin Admin { get; set; }
+        public int Id_bar { get; set; }
+        public int id_dish { get; set; }
+    
+        public virtual Restaurant Restaurant { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Guest> Guest { get; set; }
     }
 }

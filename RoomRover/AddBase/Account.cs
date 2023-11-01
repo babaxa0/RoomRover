@@ -25,8 +25,9 @@ namespace RoomRover.AddBase
         public int id_acc { get; set; }
         public string login { get; set; }
         public string password { get; set; }
-        public Nullable<int> balance { get; set; }
+        public int Id_role { get; set; }
     
+        public virtual Role Role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Admin> Admin { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

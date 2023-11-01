@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using RoomRover.AddBase;
 
 namespace RoomRover
 {
@@ -19,9 +20,14 @@ namespace RoomRover
     /// </summary>
     public partial class Fitness : Window
     {
-        public Fitness()
+        RoomRover1Entities3 RoomRover1Entities3 { get; set; }
+
+        Guest Guest { get; set; }
+        public Fitness(Guest guest)
         {
             InitializeComponent();
+            RoomRover1Entities3 = new RoomRover1Entities3();
+            Guest = guest;
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -38,6 +44,63 @@ namespace RoomRover
             if (e.ChangedButton == MouseButton.Left)
             {
                 this.DragMove();
+            }
+        }
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            SpaFitness spaFitness = new SpaFitness(Guest);
+            spaFitness.Show();
+            this.Close();
+        }
+
+        private void BronFit_Click(object sender, RoutedEventArgs e)
+        {
+            if (Guest.Balance >= 3000)
+            {
+                Guest.Balance -= 3000;
+                var guest = RoomRover1Entities3.Guest.ToList().Where(x => x.id_guest == Guest.id_guest).FirstOrDefault();
+                guest.Balance = Guest.Balance;
+                guest.Id_fitness = 1;
+                RoomRover1Entities3.SaveChanges();
+
+                try
+                {
+
+                    var rgbUslugi = RoomRover1Entities3.RGB_Uslugi.Where(x => x.id_human == guest.id_guest).FirstOrDefault();
+
+                    if (rgbUslugi != null)
+                    {
+                        rgbUslugi.fitnes = true;
+                        RoomRover1Entities3.SaveChanges();
+      
+                    }
+                    else
+                    {
+                        rgbUslugi = new RGB_Uslugi();
+                        rgbUslugi.id_human = guest.id_guest;
+                        rgbUslugi.fitnes = true;
+                        RoomRover1Entities3.RGB_Uslugi.Add(rgbUslugi);
+                        RoomRover1Entities3.SaveChanges();
+                    }
+
+
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Услугу он уже имеет");
+                    return;
+
+                }
+
+                MessageBox.Show("Вы оформили абонимент на фитнес!");
+                SpaFitness spaFitness = new SpaFitness(Guest);
+                spaFitness.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Недостаточно средств");
             }
         }
     }

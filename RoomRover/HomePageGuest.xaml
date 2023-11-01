@@ -98,7 +98,7 @@
                                 <Trigger.EnterActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <ColorAnimation To="#BC0000" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
+                                            <ColorAnimation To="#1F150D" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.EnterActions>
@@ -121,7 +121,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" BorderBrush="#24180F">
+                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" CornerRadius="15" BorderBrush="#24180F">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
 
@@ -132,7 +132,9 @@
                                 <Trigger.EnterActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <ColorAnimation To="#1F150D" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
+                                            <DoubleAnimation To="180"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
+                                            <DoubleAnimation To="35"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
+                                            <ColorAnimation To="White" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.EnterActions>
@@ -140,7 +142,9 @@
                                 <Trigger.ExitActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <ColorAnimation To="#291C11" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
+                                            <DoubleAnimation To="170"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
+                                            <DoubleAnimation To="30"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
+                                            <ColorAnimation To="White" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.ExitActions>
@@ -222,21 +226,23 @@
         <Grid Height="465" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Right"  Background="#322214">
 
             <TextBlock Height="30" Width="165" Text="Привествуем вас!" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="20" Margin="10 10 0 0"/>
-            <TextBlock Height="30" Width="165" Text="login" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="20" Margin="10 35 0 0"/>
+            <Label x:Name="NameText" Height="80" Width="180"  VerticalAlignment="Top" HorizontalAlignment="Right" Foreground="White" FontSize="20" Margin="0,35,15,0"/>
 
             <TextBlock Height="30" Width="165" Text="Ваш баланс:" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="20" Margin="10 110 0 0"/>
-            <TextBlock Height="30" Width="13" Text="₽" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="20" Margin="10 135 0 0"/>
-            <TextBlock Height="30" Width="165" Text="balance" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="20" Margin="25 135 0 0"/>
+            <TextBlock Height="30" Width="13" Text="₽" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="20" Margin="12,140,0,0"/>
+            <Label x:Name="BalText" Height="54" Width="165"  VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="20" Margin="25 135 0 0"/>
 
             <TextBlock Height="30" Width="165" Text="Ваш номер:" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="20" Margin="10 210 0 0"/>
-            <TextBlock Height="30" Width="23" Text="№" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="20" Margin="10 235 0 0"/>
-            <TextBlock Height="30" Width="165" Text="номер" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="20" Margin="37 235 0 0"/>
-
-            <TextBlock Height="30" Width="165" Text="ID счёта:" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="20" Margin="10 310 0 0"/>
-            <TextBlock Height="30" Width="165" Text="id" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="20" Margin="10 335 0 0"/>
+            <TextBlock TextWrapping="Wrap" x:Name="NameRoom" Height="67" Width="180"  VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="White" FontSize="20" Margin="0,235,0,0"/>
 
             <StackPanel Margin="0 0 10 10" Width="110" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Right">
                 <Button Style="{StaticResource btn1}" Content="Выйти" FontSize="16" FontFamily="Britannic Bold" Width="100" Height="30" Margin="0 5 0 0" Click="Button_Click"/>
+            </StackPanel>
+            <StackPanel Margin="0 0 10 50" Width="180" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                <Button Style="{StaticResource btn3}" Content="Пополнить баланс" FontSize="16" FontFamily="Britannic Bold" Width="170" Height="30" Margin="0 5 0 0" Click="Button_Click_7"/>
+            </StackPanel>
+            <StackPanel Margin="0 0 10 95" Width="180" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                <Button Style="{StaticResource btn3}" Content="Мои услуги" FontSize="16" FontFamily="Britannic Bold" Width="170" Height="30" Margin="0 5 0 0" Click="Button_Click_8"/>
             </StackPanel>
 
         </Grid>
@@ -260,7 +266,7 @@
                     <DropShadowEffect BlurRadius="5" Direction="280" ShadowDepth="2" Opacity="0.8"/>
                 </TextBlock.Effect>
             </TextBlock>
-            
+
         </Grid>
 
         <Grid Name="Toolbar" Width="800" Height="35" VerticalAlignment="Top" Grid.Row="0" Background="Transparent" MouseDown="Toolbar_MouseDown">
@@ -269,11 +275,9 @@
                 <Image x:Name="ExitButt" Source="/Source/krestneaktiv.png" Height="15" Width="15" Stretch="Fill" Margin="0,3,0,0"/>
             </Button>
 
-            <Button Style="{StaticResource btn3}"  BorderThickness="0" Background="#291C11" Height="35" Width="35" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 0 35 0" Click="Button_Click_2">
+            <Button Style="{StaticResource btn2}"  BorderThickness="0" Background="#291C11" Height="35" Width="35" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 0 35 0" Click="Button_Click_2">
                 <Image Name="MinButt" Source="/Source/palkaneaktiv.png" Height="15" Width="15" Stretch="Fill" Margin="0,8,0,0"/>
             </Button>
-
-
 
         </Grid>
 

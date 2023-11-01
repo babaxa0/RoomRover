@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RoomRover.AddBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using RoomRover.AddBase;
 
 namespace RoomRover
 {
@@ -19,10 +21,18 @@ namespace RoomRover
     /// </summary>
     public partial class HomePageAdmin : Window
     {
-        public HomePageAdmin()
+        RoomRover1Entities3 RoomRover1Entities3 { get; set; }
+
+        Admin Admin { get; set; }
+        public HomePageAdmin(Admin admin)
         {
             InitializeComponent();
+            RoomRover1Entities3 = new RoomRover1Entities3();
+            Admin = admin;
+            NameAdminText.Content = admin.Name_admin;
         }
+
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -33,7 +43,7 @@ namespace RoomRover
             this.WindowState = WindowState.Minimized;
         }
 
-        private void Toolbar_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Toolbar_MouseDown(object sender, MouseButtonEventArgs e) 
         {
             if (e.ChangedButton == MouseButton.Left)
             {
@@ -49,7 +59,7 @@ namespace RoomRover
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            Add_report add_Report = new Add_report();
+            Add_report add_Report = new Add_report(Admin);
             add_Report.Show();
             this.Close(); 
         }

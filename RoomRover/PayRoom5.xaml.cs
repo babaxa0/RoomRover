@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using RoomRover.AddBase;
 
 namespace RoomRover
 {
@@ -19,9 +20,14 @@ namespace RoomRover
     /// </summary>
     public partial class PayRoom5 : Window
     {
-        public PayRoom5()
+        RoomRover1Entities3 RoomRover1Entities3 { get; set; }
+
+        Guest Guest { get; set; }
+        public PayRoom5(Guest guest)
         {
             InitializeComponent();
+            RoomRover1Entities3 = new RoomRover1Entities3();
+            Guest = guest;
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -42,9 +48,29 @@ namespace RoomRover
         }
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            HomePageGuest homePageGuest = new HomePageGuest();
+            HomePageGuest homePageGuest = new HomePageGuest(Guest);
             homePageGuest.Show();
             this.Close();
+        }
+
+        private void BronRoom5_Click(object sender, RoutedEventArgs e)
+        {
+            if (Guest.Balance >= 31400)
+            {
+                Guest.Balance -= 31400;
+                var guest = RoomRover1Entities3.Guest.ToList().Where(x => x.id_guest == Guest.id_guest).FirstOrDefault();
+                guest.Balance = Guest.Balance;
+                guest.id_room = 6;
+                RoomRover1Entities3.SaveChanges();
+                MessageBox.Show("Вы оформили номер!");
+                HomePageGuest homePageGuest = new HomePageGuest(guest);
+                homePageGuest.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Недостаточно средств");
+            }
         }
     }
 }

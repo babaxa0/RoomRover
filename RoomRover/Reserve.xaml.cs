@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using RoomRover.AddBase;
 
 namespace RoomRover
 {
@@ -19,9 +20,14 @@ namespace RoomRover
     /// </summary>
     public partial class Reserve : Window
     {
-        public Reserve()
+        RoomRover1Entities3 RoomRover1Entities3 { get; set; }
+
+        Guest Guest { get; set; }
+        public Reserve(Guest guest)
         {
             InitializeComponent();
+            RoomRover1Entities3 = new RoomRover1Entities3();
+            Guest = guest;
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -43,41 +49,41 @@ namespace RoomRover
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            PayRoom1 payRoom1 = new PayRoom1();
+            PayRoom1 payRoom1 = new PayRoom1(Guest);
             payRoom1.Show();
             this.Close();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            PayRoom2 payRoom2 = new PayRoom2();
+            PayRoom2 payRoom2 = new PayRoom2(Guest);
             payRoom2.Show();
             this.Close();
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            PayRoom3 payRoom3 = new PayRoom3();
+            PayRoom3 payRoom3 = new PayRoom3(Guest);
             payRoom3.Show();
             this.Close();
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            PayRoom4 payRoom4 = new PayRoom4();
+            PayRoom4 payRoom4 = new PayRoom4(Guest);
             payRoom4.Show();
             this.Close();
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
-            PayRoom5 payRoom5 = new PayRoom5();
+            PayRoom5 payRoom5 = new PayRoom5(Guest);
             payRoom5.Show();
             this.Close();
         }
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            HomePageGuest homePageGuest = new HomePageGuest();
+            HomePageGuest homePageGuest = new HomePageGuest(Guest);
             homePageGuest.Show();
             this.Close();
         }

@@ -212,7 +212,7 @@
         <Grid Height="465" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Right"  Background="#322214">
 
             <TextBlock Height="30" Width="165" Text="Ваш admin id:" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="20" Margin="10 10 0 0"/>
-            <TextBlock Height="30" Width="165" Text="id_admin" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="20" Margin="10 35 0 0"/>
+            <Label Height="59" Width="165" x:Name="NameAdminText" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="20" Margin="10 35 0 0"/>
 
             <StackPanel Margin="0 0 10 10" Width="110" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Right">
                 <Button Style="{StaticResource btn1}" Content="Выйти" FontSize="16" FontFamily="Britannic Bold" Width="100" Height="30" Margin="0 5 0 0" Click="Button_Click"/>

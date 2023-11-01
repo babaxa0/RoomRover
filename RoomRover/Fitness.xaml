@@ -201,7 +201,8 @@
             <Border Width="800" Height="465" Background="Black" VerticalAlignment="Top" Opacity="0.65"/>
             <TextBlock Text="Цена абонемента на 1 неделю:" FontSize="35" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="110 0 0 180"/>
             <TextBlock Text="3000 руб." FontSize="35" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="110 0 0 30"/>
-            <Button Height="50" Width="250" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="110 100 0 0" Content="Приобрести" FontSize="26" Style="{StaticResource btn1}"/>
+            <Image Source="/Source/arrow_back.png" Width="25" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 50 0 0"  MouseDown="Image_MouseDown"/>
+            <Button x:Name="BronFit" Click="BronFit_Click" Height="50" Width="250" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="110 100 0 0" Content="Приобрести" FontSize="26" Style="{StaticResource btn1}"/>
 
         </Grid>
 

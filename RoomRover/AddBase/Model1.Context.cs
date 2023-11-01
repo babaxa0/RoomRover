@@ -15,10 +15,10 @@ namespace RoomRover.AddBase
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class RoomRoverEntities : DbContext
+    public partial class RoomRover1Entities3 : DbContext
     {
-        public RoomRoverEntities()
-            : base("name=RoomRoverEntities")
+        public RoomRover1Entities3()
+            : base("name=RoomRover1Entities3")
         {
         }
     
@@ -29,15 +29,21 @@ namespace RoomRover.AddBase
     
         public virtual DbSet<Account> Account { get; set; }
         public virtual DbSet<Admin> Admin { get; set; }
+        public virtual DbSet<Bar> Bar { get; set; }
         public virtual DbSet<Check> Check { get; set; }
         public virtual DbSet<Count> Count { get; set; }
         public virtual DbSet<Finance> Finance { get; set; }
+        public virtual DbSet<Fitness> Fitness { get; set; }
         public virtual DbSet<Guest> Guest { get; set; }
         public virtual DbSet<Hotel> Hotel { get; set; }
         public virtual DbSet<Reservation> Reservation { get; set; }
+        public virtual DbSet<Rest> Rest { get; set; }
         public virtual DbSet<Restaurant> Restaurant { get; set; }
         public virtual DbSet<Review> Review { get; set; }
+        public virtual DbSet<RGB_Uslugi> RGB_Uslugi { get; set; }
+        public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Room> Room { get; set; }
+        public virtual DbSet<Spa> Spa { get; set; }
         public virtual DbSet<Spa_fitness> Spa_fitness { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     
