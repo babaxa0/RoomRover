@@ -1,28 +1,28 @@
-﻿<Window x:Class="RoomRover.HomePageAdmin"
+﻿<Window x:Class="RoomRover.Reports"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoomRover"
         mc:Ignorable="d"
-        Title="HomePageAdmin" Height="500" Width="800" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Reports" Height="500" Width="800" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <Style x:Key="TB" TargetType="TextBox">
             <Setter Property="Background" Value="#FF18222B"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Height" Value="35"/>
+            <Setter Property="Height" Value="40"/>
             <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="18"/>
             <Setter Property="BorderBrush" Value="#24180F"/>
             <Setter Property="Padding" Value="7,10,0,0"/>
-            <Setter Property="Width" Value="200"/>
+            <Setter Property="Width" Value="300"/>
             <Setter Property="FontFamily" Value="Britannic Bold"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TextBox">
                         <Grid x:Name="root" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" SnapsToDevicePixels="True" VerticalAlignment="{TemplateBinding VerticalAlignment}">
-                            <Border x:Name="Background" BorderThickness="1" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"/>
+                            <Border x:Name="Background" BorderThickness="1" CornerRadius="20" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"/>
                             <ScrollViewer x:Name="PART_ContentHost"
                                       BorderThickness="0"
                                       Padding="{TemplateBinding Padding}"
@@ -49,7 +49,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="1" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" CornerRadius="13" BorderBrush="#24180F">
+                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="3" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" CornerRadius="20" BorderBrush="#24180F">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
 
@@ -60,9 +60,9 @@
                                 <Trigger.EnterActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <DoubleAnimation To="105"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
-                                            <DoubleAnimation To="32"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
-                                            <ColorAnimation To="White" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.3"/>
+                                            <DoubleAnimation To="160"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
+                                            <DoubleAnimation To="45"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
+                                            <ColorAnimation To="White" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.2"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.EnterActions>
@@ -70,9 +70,9 @@
                                 <Trigger.ExitActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <DoubleAnimation To="100"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
-                                            <DoubleAnimation To="30"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
-                                            <ColorAnimation To="White" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.3"/>
+                                            <DoubleAnimation To="150"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
+                                            <DoubleAnimation To="40"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
+                                            <ColorAnimation To="White" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.2"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.ExitActions>
@@ -87,7 +87,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" BorderBrush="#24180F">
+                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" BorderBrush="#18222B">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
 
@@ -155,7 +155,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" CornerRadius="20" BorderBrush="#24180F">
+                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" BorderThickness="3" CornerRadius="20" BorderBrush="#24180F">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
 
@@ -166,7 +166,7 @@
                                 <Trigger.EnterActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <DoubleAnimation To="160"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
+                                            <DoubleAnimation To="130"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
                                             <DoubleAnimation To="45"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
                                             <ColorAnimation To="White" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
                                         </Storyboard>
@@ -176,7 +176,7 @@
                                 <Trigger.ExitActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <DoubleAnimation To="150"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
+                                            <DoubleAnimation To="120"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
                                             <DoubleAnimation To="40"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
                                             <ColorAnimation To="White" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.1"/>
                                         </Storyboard>
@@ -193,9 +193,7 @@
 
     <Grid>
 
-        <Grid Width="800" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center" Background="#291C11"/>
-
-        <Grid Height="465" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+        <Grid Height="465" Width="35" VerticalAlignment="Bottom" HorizontalAlignment="Left">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#291C11" Offset="0"/>
@@ -203,47 +201,55 @@
                 </LinearGradientBrush>
             </Grid.Background>
 
-            <StackPanel Margin="0 0 0 100" Width="160" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button Style="{StaticResource btn4}" Content="Создать отчёт" FontSize="16" FontFamily="Britannic Bold" Width="150" Height="40" Margin="0 5 0 0" Click="Button_Click_3"/>
-            </StackPanel>
-            <StackPanel Margin="0 100 0 0" Width="160" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button Style="{StaticResource btn4}" Content="Отчёты" FontSize="16" FontFamily="Britannic Bold" Width="150" Height="40" Margin="0 5 0 0"/>
-            </StackPanel>
+            <Image Source="/Source/arrow_back.png" Width="25" Height="25" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 30 0 0" MouseDown="Image_MouseDown"/>
 
         </Grid>
 
-        <Grid Height="465" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Right"  Background="#322214">
-
-            <TextBlock Height="30" Width="165" Text="Ваш admin id:" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="20" Margin="10 10 0 0"/>
-            <Label Height="59" Width="165" x:Name="NameAdminText" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="20" Margin="10 35 0 0"/>
-
-            <StackPanel Margin="0 0 10 10" Width="110" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-                <Button Style="{StaticResource btn1}" Content="Выйти" FontSize="16" FontFamily="Britannic Bold" Width="100" Height="30" Margin="0 5 0 0" Click="Button_Click"/>
-            </StackPanel>
-
-        </Grid>
-
-        <Grid Height="465" Width="400" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+        <Grid Height="465" Width="35" VerticalAlignment="Bottom" HorizontalAlignment="Right">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#00A7BD" Offset="0"/>
+                    <GradientStop Color="#291C11" Offset="0"/>
+                    <GradientStop Color="#3B2818" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Height="35" Width="800" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#291C11" Offset="0"/>
+                    <GradientStop Color="#3B2818" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Height="35" Width="800" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#3A2717" Offset="0"/>
+                    <GradientStop Color="#3B2818" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Height="430" Width="730">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#008394" Offset="0"/>
                     <GradientStop Color="#00E1FF" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
 
-            <TextBlock Background="Transparent" Text="ROOM" Margin="0 0 0 80" FontFamily="Britannic Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="100" Foreground="#322214">
-                <TextBlock.Effect>
-                    <DropShadowEffect BlurRadius="5" Direction="280" ShadowDepth="2" Opacity="0.8"/>
-                </TextBlock.Effect>
-            </TextBlock>
+            <ListView VerticalAlignment="Center" HorizontalAlignment="Left" Width="500" Height="350" Margin="30 0 0 0">
+                
+            </ListView>
 
-            <TextBlock Background="Transparent" Text="ROVER" Margin="0 80 0 0" FontFamily="Britannic Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="100" Foreground="#322214">
-                <TextBlock.Effect>
-                    <DropShadowEffect BlurRadius="5" Direction="280" ShadowDepth="2" Opacity="0.8"/>
-                </TextBlock.Effect>
-            </TextBlock>
+            <StackPanel Margin="0 0 10 10" Width="160" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                <Button x:Name="Finance" Click="Finance_Click" Style="{StaticResource btn1}" Content="Вернуться назад" FontSize="16" FontFamily="Britannic Bold" Width="150" Height="40" Margin="0 5 0 0" />
+            </StackPanel>
 
         </Grid>
+
 
         <Grid Name="Toolbar" Width="800" Height="35" VerticalAlignment="Top" Grid.Row="0" Background="Transparent" MouseDown="Toolbar_MouseDown">
 
@@ -255,12 +261,7 @@
                 <Image Name="MinButt" Source="/Source/palkaneaktiv.png" Height="15" Width="15" Stretch="Fill" Margin="0,8,0,0"/>
             </Button>
 
-
-
         </Grid>
 
     </Grid>
-
-
-
 </Window>
