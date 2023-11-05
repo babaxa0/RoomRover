@@ -63,5 +63,12 @@ namespace RoomRover
             add_Report.Show();
             this.Close(); 
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Reports reports = new Reports();
+            reports.Show();
+            this.Close();
+        }
     }
 }

@@ -207,7 +207,7 @@
                 <Button Style="{StaticResource btn4}" Content="Создать отчёт" FontSize="16" FontFamily="Britannic Bold" Width="150" Height="40" Margin="0 5 0 0" Click="Button_Click_3"/>
             </StackPanel>
             <StackPanel Margin="0 100 0 0" Width="160" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button Style="{StaticResource btn4}" Content="Отчёты" FontSize="16" FontFamily="Britannic Bold" Width="150" Height="40" Margin="0 5 0 0"/>
+                <Button Style="{StaticResource btn4}" Content="Отчёты" FontSize="16" FontFamily="Britannic Bold" Width="150" Height="40" Margin="0 5 0 0" Click="Button_Click_4"/>
             </StackPanel>
 
         </Grid>

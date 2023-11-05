@@ -23,5 +23,29 @@ namespace RoomRover
         {
             InitializeComponent();
         }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void Toolbar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            HomePageAdmin homePageAdmin = HomePageAdmin();
+            homePageAdmin.Show();
+            this.Close();
+        }
     }
 }
